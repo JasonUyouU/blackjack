@@ -1,3 +1,6 @@
+body {
+	text-align: center;
+}
 .dealer img{
 	height: 300px;
 	width: 200px;
@@ -5,4 +8,10 @@
 .player img {
 	height: 300px;
 	width: 200px;
+}
+button.btn-hit {
+	text-align: center;
+}
+button.btn-stay {
+	text-align: center;
 }
