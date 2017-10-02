@@ -21,8 +21,8 @@ document.querySelector('.btn-deal').addEventListener('click', function() {
 	var dealerCardDom = document.getElementById('dealerCard');
 
 	document.querySelector('.btn-deal').style.display = 'none';
-	document.querySelector('.btn-hit').style.display = 'block';
-	document.querySelector('.btn-stay').style.display = 'block';
+	document.querySelector('.btn-hit').style.display = 'inline-block';
+	document.querySelector('.btn-stay').style.display = 'inline-block';
 
 	//make sure same cards are not dealt
 	if(suit1 === suit2 && card1 === card2) {
@@ -236,7 +236,7 @@ function init() {
 }
 
 function again() {
-	document.querySelector('.btn-again').style.display = 'block';
+	document.querySelector('.btn-again').style.display = 'inline-block';
 	document.querySelector('.btn-hit').style.display = 'none';
 	document.querySelector('.btn-stay').style.display = 'none';
 }
