@@ -9,18 +9,20 @@
 </head>
 <body>
 	<h1>BlackJack</h1>
-	<div class="dealer">
+	<div class="player cards">
+		<img src="img/1_of_4.png" alt="player-card1" id="playerCard1">
+		<img src="img/2_of_4.png" alt="player-card2" id="playerCard2">
+	</div>	
+	<div class="dealer cards">
 		<img src="img/facedown.png" alt="dealer-card1" id="facedownCard">
 		<img src="img/3_of_4.png" alt="dealer-card2" id="dealerCard">
 	</div>
-	<div class="player">
-		<img src="img/1_of_4.png" alt="player-card1" id="playerCard1">
-		<img src="img/2_of_4.png" alt="player-card2" id="playerCard2">
+	<div class="buttons">
+		<button class="btn-deal">Deal the Cards</button>
+		<button class="btn-hit">Hit</button>
+		<button class="btn-stay">Stay</button>
+		<button class="btn-again">Play Again</button>
+		<script src="js/main.js"></script>
 	</div>
-	<button class="btn-deal">Deal the Cards</button>
-	<button class="btn-hit">Hit</button>
-	<button class="btn-stay">Stay</button>
-	<button class="btn-again">Play Again</button>
-	<script src="js/main.js"></script>
 </body>
 </html>
