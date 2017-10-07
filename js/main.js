@@ -33,8 +33,12 @@ document.querySelector('.btn-deal').addEventListener('click', function() {
 	dealerCardDom.src = 'img/' + dCard1 + '_of_' + dSuit1 + '.png';
 
 	if (roundScore === 21) {
-			alert('Blackjack');
-			again();
+		var blackJackH1 = document.createElement('h1');
+		var textHere = document.createTextNode('Blackjack!');
+		blackJackH1.appendChild(textHere);
+		var addHere = document.getElementById('body');
+		addHere.appendChild(blackJackH1)
+		again();
 	}
 });
 
@@ -59,7 +63,7 @@ document.querySelector('.btn-hit').addEventListener('click', function() {
 
 	dealtCard = document.createElement('img');
 	dealtCard.setAttribute('src', 'img/' + newCard + '_of_' + newSuit + '.png');
-	dealtCard.className = 'dealt';
+	dealtCard.className = 'dealt animated bounceInLeft';
 	document.querySelector('.player').appendChild(dealtCard);
 
 	//IF the cards add up to more than 21, than Bust.
@@ -72,23 +76,23 @@ document.querySelector('.btn-hit').addEventListener('click', function() {
 	} else if (newCard === 1 && roundScore === 10) {
 		var newCardIsAce = 11;
 		roundScore = newCardIsAce + roundScore;
-		alert('21!');
+		twentyOne();
 		again();
 	} else {
 		roundScore += newCard;
 	}
 
 	if (roundScore > 31 && (card1 === 1 || card2 ===1)) {
-		alert('Bust');
+		bust();
 		again();
 	} else if (roundScore > 21 && (card1 !== 1 && card2 !== 1)) {
-		alert('Bust');
+		bust();
 		again();
 	} else if (roundScore === 21) {
-		alert('21!');
+		twentyOne();
 		again();
 	} else if (roundScore === 31) {
-		alert('21!');
+		twentyOne();
 		again();
 	}
 
@@ -119,7 +123,7 @@ document.querySelector('.btn-stay').addEventListener('click', function() {
 	}
 
 	var fdCardDom = document.getElementById('facedownCard');
-
+	fdCardDom.className = "animated flip"
 	fdCardDom.src = 'img/' + dCard2 + '_of_' + dSuit2 + '.png';
 
 	//IF dealer has less than or equal to 16, he will deal one more card
@@ -224,7 +228,7 @@ document.querySelector('.btn-stay').addEventListener('click', function() {
 		}
 		var dealtDCard = document.createElement('img');
 		dealtDCard.setAttribute('src', 'img/' + newDCard + '_of_' + newDSuit + '.png');
-
+		dealtDCard.className = 'animated bounceInRight'
 		document.querySelector('.dealer').appendChild(dealtDCard);
 	};
 
@@ -235,13 +239,25 @@ document.querySelector('.btn-stay').addEventListener('click', function() {
 	console.log(roundScore);
 	console.log(dealerScore);
 	if (roundScore > dealerScore || dealerScore > 21) {
-		alert('You win!');
+		var winH1 = document.createElement('h1');
+		var textHere = document.createTextNode('You Win!');
+		winH1.appendChild(textHere);
+		var addHere = document.getElementById('body');
+		addHere.appendChild(winH1)
 		again();
 	} else if (roundScore < dealerScore) {
-		alert('You lose..');
+		var loseH1 = document.createElement('h1');
+		var textHere = document.createTextNode('You Lose...');
+		loseH1.appendChild(textHere);
+		var addHere = document.getElementById('body');
+		addHere.appendChild(loseH1)
 		again();
 	} else {
-		alert('it\'s a draw');
+		var drawH1 = document.createElement('h1');
+		var textHere = document.createTextNode('It\'s a Draw');
+		drawH1.appendChild(textHere);
+		var addHere = document.getElementById('body');
+		addHere.appendChild(drawH1)
 		again();
 	}
 
@@ -311,4 +327,20 @@ function again() {
 	document.querySelector('.btn-again').style.display = 'inline-block';
 	document.querySelector('.btn-hit').style.display = 'none';
 	document.querySelector('.btn-stay').style.display = 'none';
+}
+
+function bust() {
+	var bustH1 = document.createElement('h1');
+	var textHere = document.createTextNode('Bust!');
+	bustH1.appendChild(textHere);
+	var addHere = document.getElementById('body');
+	addHere.appendChild(bustH1)
+}
+
+function twentyOne() {
+	var twentyH1 = document.createElement('h1');
+	var textHere = document.createTextNode('You win with 21!');
+	twentyH1.appendChild(textHere);
+	var addHere = document.getElementById('body');
+	addHere.appendChild(twentyH1)
 }

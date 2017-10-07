@@ -5,20 +5,22 @@
 	<meta name="author" content="Jason You">
 	<meta name="description" content="BlackJack using Javascript">
 	<title>BlackJack</title>
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body id="body">
 	<h1>BlackJack</h1>
 	<div class="player cards">
-		<img src="img/1_of_4.png" alt="player-card1" id="playerCard1">
-		<img src="img/2_of_4.png" alt="player-card2" id="playerCard2">
+		<img src="img/1_of_4.png" alt="player-card1" id="playerCard1" class="animated bounceInLeft">
+		<img src="img/2_of_4.png" alt="player-card2" id="playerCard2" class="animated bounceInLeft">
 	</div>	
 	<div class="dealer cards">
-		<img src="img/facedown.png" alt="dealer-card1" id="facedownCard">
-		<img src="img/3_of_4.png" alt="dealer-card2" id="dealerCard">
+		<img src="img/facedown.png" alt="dealer-card1" id="facedownCard" class="animated bounceInRight">
+		<img src="img/3_of_4.png" alt="dealer-card2" id="dealerCard" class="animated bounceInRight">
 	</div>
 	<div class="buttons">
-		<button class="btn-deal">Deal the Cards</button>
+		<button class="btn-deal">Deal</button>
 		<button class="btn-hit">Hit</button>
 		<button class="btn-stay">Stay</button>
 		<button class="btn-again">Play Again</button>

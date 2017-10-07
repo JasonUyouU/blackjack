@@ -7,9 +7,11 @@ body {
 	background-image: url('../img/background.png');
 	background-size: cover;
 	background-repeat: no-repeat;
+	font-family: 'Pacifico', cursive;
 }
 h1 {
 	color: #fff;
+	font-size: 40px;
 }
 div.cards {
 	display: inline-block;
@@ -39,5 +41,18 @@ div.player {
 	float: right;
 }
 div.buttons {
-	margin-top: 500px;
+	margin-top: 520px;
+}
+button {
+	box-shadow: none;
+	padding: 3px 20px;
+	font-size: 22px;
+	border: none;
+	outline: none;
+	background-color: #b52943;
+	color: #fff;
+	font-family: 'Pacifico', cursive;
+}
+button:hover {
+	cursor: pointer;
 }
