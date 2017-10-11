@@ -1,11 +1,27 @@
-html {
-	width: 100%;
-	height: 100%;
+@media (max-width: 1350px) {
+	div.cards {
+		margin: 5% auto !important;
+	}
+	div.cards h1 {
+		font-size: 32px !important;
+	}
+	img {
+		height: 100px !important;
+		width: 66px !important;
+	}
+}
+@media (max-width: 1075px) {
+	div.buttons {
+		margin-top: 4% !important;
+	}
+	button {
+		font-size: 14px !important;
+	}
 }
 body {
 	text-align: center;
 	background-image: url('../img/background.png');
-	background-size: cover;
+	background-size: 100%;
 	background-repeat: no-repeat;
 	font-family: 'Pacifico', cursive;
 }
@@ -15,8 +31,8 @@ h1 {
 }
 div.cards {
 	display: inline-block;
-	height: 400px;
-	width: 700px;
+	height: 100px;
+	width: 33%;
 	margin: 10% auto;
 }
 div.dealer {
@@ -27,21 +43,21 @@ div.player {
 
 }
 .dealer img{
-	margin-top: 100px;
+	margin-top: 10px;
 	height: 150px;
 	width: 100px;
 	padding: 0 5px;
 	float: left;
 }
 .player img {
-	margin-top: 100px;
+	margin-top: 10px;
 	height: 150px;
 	width: 100px;
 	padding: 0 5px;
 	float: right;
 }
 div.buttons {
-	margin-top: 520px;
+	margin-top: 28%;
 }
 button {
 	box-shadow: none;
