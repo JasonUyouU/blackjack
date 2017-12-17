@@ -8,10 +8,228 @@ document.querySelector('.btn-again').style.display = 'none';
 
 var card1, card2, dCard1, dCard2, suit1, suit2, dSuit1, dSuit2, roundScore, dealerScore, newCard, newSuit, dealtCard, newDCard, newDSuit;
 
-// init();
+// new script for debugging
 
+var cards = [
+	{
+		value: 2,
+		image: "img/2_of_1.png"
+	},
+	{
+		value: 2,
+		image: "img/2_of_2.png"
+	},
+	{
+		value: 2,
+		image: "img/2_of_3.png"
+	},
+	{
+		value: 2,
+		image: "img/2_of_4.png"
+	},
+	{
+		value: 3,
+		image: "img/3_of_1.png"
+	},
+	{
+		value: 3,
+		image: "img/3_of_2.png"
+	},
+	{
+		value: 3,
+		image: "img/3_of_3.png"
+	},
+	{
+		value: 3,
+		image: "img/3_of_3.png"
+	},
+	{
+		value: 4,
+		image: "img/4_of_1.png"
+	},
+	{
+		value: 4,
+		image: "img/4_of_2.png"
+	},
+	{
+		value: 4,
+		image: "img/4_of_3.png"
+	},
+	{
+		value: 4,
+		image: "img/4_of_4.png"
+	},
+	{
+		value: 5,
+		image: "img/5_of_1.png"
+	},
+	{
+		value: 5,
+		image: "img/5_of_2.png"
+	},
+	{
+		value: 5,
+		image: "img/5_of_3.png"
+	},
+	{
+		value: 5,
+		image: "img/5_of_4.png"
+	},
+	{
+		value: 6,
+		image: "img/6_of_1.png"
+	},
+	{
+		value: 6,
+		image: "img/6_of_2.png"
+	},
+	{
+		value: 6,
+		image: "img/6_of_3.png"
+	},
+	{
+		value: 6,
+		image: "img/6_of_4.png"
+	},
+	{
+		value: 7,
+		image: "img/7_of_1.png"
+	},
+	{
+		value: 7,
+		image: "img/7_of_2.png"
+	},
+	{
+		value: 7,
+		image: "img/7_of_3.png"
+	},
+	{
+		value: 7,
+		image: "img/7_of_4.png"
+	},
+	{
+		value: 8,
+		image: "img/8_of_1.png"
+	},
+	{
+		value: 8,
+		image: "img/8_of_2.png"
+	},
+	{
+		value: 8,
+		image: "img/8_of_3.png"
+	},
+	{
+		value: 8,
+		image: "img/8_of_4.png"
+	},
+	{
+		value: 9,
+		image: "img/9_of_1.png"
+	},
+	{
+		value: 9,
+		image: "img/9_of_2.png"
+	},
+	{
+		value: 9,
+		image: "img/9_of_3.png"
+	},
+	{
+		value: 9,
+		image: "img/9_of_4.png"
+	},
+	{
+		value: 10,
+		image: "img/10_of_1.png"
+	},
+	{
+		value: 10,
+		image: "img/10_of_2.png"
+	},
+	{
+		value: 10,
+		image: "img/10_of_3.png"
+	},
+	{
+		value: 10,
+		image: "img/10_of_4.png"
+	},
+	{
+		value: 10,
+		image: "img/11_of_1.png"
+	},
+	{
+		value: 10,
+		image: "img/11_of_2.png"
+	},
+	{
+		value: 10,
+		image: "img/11_of_3.png"
+	},
+	{
+		value: 10,
+		image: "img/11_of_4.png"
+	},
+	{
+		value: 10,
+		image: "img/12_of_1.png"
+	},
+	{
+		value: 10,
+		image: "img/12_of_2.png"
+	},
+	{
+		value: 10,
+		image: "img/12_of_3.png"
+	},
+	{
+		value: 10,
+		image: "img/12_of_4.png"
+	},
+	{
+		value: 10,
+		image: "img/13_of_1.png"
+	},
+	{
+		value: 10,
+		image: "img/13_of_2.png"
+	},
+	{
+		value: 10,
+		image: "img/13_of_3.png"
+	},
+	{
+		value: 10,
+		image: "img/13_of_4.png"
+	},
+	{
+		value: aceValue(),
+		image: "img/1_of_1.png"
+	},
+	{
+		value: aceValue(),
+		image: "img/1_of_2.png"
+	},
+	{
+		value: aceValue(),
+		image: "img/1_of_3.png"
+	},
+	{
+		value: aceValue(),
+		image: "img/1_of_4.png"
+	}
+];
+
+function aceValue() {
+	if (playerScore < 11) {
+		return 11
+	} else {
+		return 1
+	}
+}
 document.querySelector('.btn-deal').addEventListener('click', function() {
-	
+
 	init();
 	console.log(roundScore);
 
@@ -43,7 +261,7 @@ document.querySelector('.btn-deal').addEventListener('click', function() {
 });
 
 document.querySelector('.btn-hit').addEventListener('click', function() {
-	
+
 	newCard = Math.ceil(Math.random()*13);
 	newSuit = Math.ceil(Math.random()*4);
 
@@ -234,7 +452,7 @@ document.querySelector('.btn-stay').addEventListener('click', function() {
 
 	if (roundScore > 21) {
 		roundScore = roundScore - 10;
-	}	
+	}
 
 	console.log(roundScore);
 	console.log(dealerScore);
@@ -280,12 +498,12 @@ function init() {
 	//make sure no same cards are dealt
 	if(suit1 === suit2 && card1 === card2) {
 		card2 = Math.ceil(Math.random()*13);
-		suit2 = Math.ceil(Math.random()*4);	
-	} 
+		suit2 = Math.ceil(Math.random()*4);
+	}
 	if (dCard1 === card1 && dSuit1 === suit1) {
 		dCard1 = Math.ceil(Math.random()*13);
 		dSuit1 = Math.ceil(Math.random()*4);
-	} 
+	}
 	if (dCard1 === card2 && dSuit1 === suit2) {
 		dCard1 = Math.ceil(Math.random()*13);
 		dSuit1 = Math.ceil(Math.random()*4);
